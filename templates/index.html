@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Species Predictor</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        form { margin: auto; width: 300px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; background: #f9f9f9; }
+        input, button { width: 100%; margin: 5px 0; padding: 10px; }
+        .result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Fish Species Predictor</h2>
+    
+    <form action="/predict" method="post">
+        <label>Weight:</label>
+        <input type="text" name="Weight" required><br>
+
+        <label>Length1:</label>
+        <input type="text" name="Length1" required><br>
+
+        <label>Length2:</label>
+        <input type="text" name="Length2" required><br>
+
+        <label>Length3:</label>
+        <input type="text" name="Length3" required><br>
+
+        <label>Height:</label>
+        <input type="text" name="Height" required><br>
+
+        <label>Width:</label>
+        <input type="text" name="Width" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <div class="result">
+        {% if prediction %}
+            <p> <strong>{{ prediction }}</strong></p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
